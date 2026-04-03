@@ -1,0 +1,7 @@
+{
+  "name": "Réseau & Patrimoine",
+  "description": "Agence immobilière de luxe spécialisée dans le patrimoine et l'immobilier d'exception.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
