@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoFinal from './assets/rsp.jpg'; // Adapte le chemin et le nom
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Search, 
@@ -45,13 +46,10 @@ const Header = ({ onNavigate }: { onNavigate: (view: string) => void }) => {
           {/* Placeholder for the logo provided in the prompt */}
           <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center text-white overflow-hidden border-2 border-brand-accent/30">
              <img 
-               src="https://ais-dev-3bl6cjlnnwx5ws2z3rxgzr-612784590503.europe-west2.run.app/logo.png" 
-               alt="Réseau & Patrimoine" 
-               className="w-full h-full object-cover"
-               onError={(e) => {
-                 (e.target as HTMLImageElement).src = 'https://picsum.photos/seed/realestate/100/100';
-               }}
-             />
+  src={logoFinal} // Utilise la variable importée ici
+  alt="Réseau & Patrimoine" 
+  className="w-full h-full object-cover"
+/>
           </div>
           <div className={cn("flex flex-col", isScrolled ? "text-brand-primary" : "text-white")}>
             <span className="font-serif text-xl font-bold tracking-tight leading-none uppercase">Réseau & Patrimoine</span>
@@ -136,7 +134,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl text-white mb-6 leading-tight"
         >
-          L'Art de Vivre <br /> <span className="italic font-light">d'Exception</span>
+          Le luxe, tout simplement <br /> <span className="italic font-light">d'Exception</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0 }}
@@ -942,9 +940,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-primary font-serif font-bold">RP</div>
-              <span className="font-serif text-2xl font-bold tracking-tight uppercase">Réseau & Patrimoine</span>
-            </div>
+  <img 
+    src={logoFinal} 
+    alt="Logo Réseau & Patrimoine" 
+    className="w-10 h-10 rounded-full object-cover border border-white/20"
+  />
+  <span className="font-serif text-2xl font-bold tracking-tight uppercase">Réseau & Patrimoine</span>
+</div>
             <p className="text-white/40 max-w-md leading-relaxed">
               L'excellence immobilière au service de votre patrimoine. Nous accompagnons nos clients dans leurs projets les plus ambitieux avec discrétion et expertise.
             </p>
